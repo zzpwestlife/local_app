@@ -2,6 +2,10 @@ version: '3.5'
 services:
   app:
     build: .
+    ports:
+      - "80:8080"
+    volumes:
+      - "./src/:/var/www/html:ro"
   sut:
     image: alpine:3.10
     depends_on:
